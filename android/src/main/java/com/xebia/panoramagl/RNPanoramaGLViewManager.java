@@ -24,6 +24,12 @@ public class RNPanoramaGLViewManager extends SimpleViewManager<RNPanoramaGLView>
         return new RNPanoramaGLView(context, this);
     }
 
+    @Override
+    protected void onAfterUpdateTransaction(RNPanoramaGLView view) {
+        super.onAfterUpdateTransaction(view);
+        view.onAfterUpdateTransaction();
+    }
+
     public ReactApplicationContext getContext() {
         return _context;
     }

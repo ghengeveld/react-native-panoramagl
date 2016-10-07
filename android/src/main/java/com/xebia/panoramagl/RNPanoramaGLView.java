@@ -20,8 +20,10 @@ public class RNPanoramaGLView extends RelativeLayout {
 
 //        panoWidgetView = (VrPanoramaView) findViewById(R.id.pano_view);
 //        panoWidgetView.setEventListener(new ActivityEventListener());
+    }
 
-        TextView tv = new TextView(context);
+    public void onAfterUpdateTransaction() {
+        TextView tv = new TextView(this.getContext());
         tv.setId(1);
         tv.setText("yolo");
         tv.setTextColor(Color.BLACK);
