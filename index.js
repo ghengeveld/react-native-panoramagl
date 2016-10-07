@@ -14,7 +14,7 @@ class PanoramaView extends React.Component {
 
   render() {
     return (
-      <RNPanoramaGL
+      <RNPanoramaGLView
         {...this.props}
         ref={ref => this.ref = ref}
       />
@@ -26,7 +26,7 @@ PanoramaView.propTypes = {
   image: React.PropTypes.string,
 }
 
-const RNPanoramaGL = requireNativeComponent('RNPanoramaGL', PanoramaView, {
+const RNPanoramaGLView = requireNativeComponent('RNPanoramaGL', PanoramaView, {
   nativeOnly: {}
 });
 
