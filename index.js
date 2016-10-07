@@ -1,24 +1,33 @@
-import React from 'react';
-import { NativeModules, requireNativeComponent } from 'react-native';
+import React, { PropTypes } from 'react';
+import {
+  View,
+  NativeModules,
+  requireNativeComponent
+} from 'react-native';
 
 const { PanoramaGLManager } = NativeModules;
 
 class PanoramaView extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   render() {
     return (
-      <RNPanoramaGL ref={ref => this.ref = ref} />
-    );
+      <RNPanoramaGL
+        {...this.props}
+        ref={ref => this.ref = ref}
+      />
+    )
   }
 }
 
+PanoramaView.propTypes = {
+  image: React.PropTypes.string,
+}
+
 const RNPanoramaGL = requireNativeComponent('RNPanoramaGL', PanoramaView, {
-  nativeOnly: {
-    onChange: true
-  }
+  nativeOnly: {}
 });
 
 const PanoramaGL = { PanoramaView };
