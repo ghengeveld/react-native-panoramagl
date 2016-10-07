@@ -1,5 +1,6 @@
 package com.xebia.panoramagl;
 
+import android.app.Activity;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 
@@ -13,7 +14,7 @@ public class RNPanoramaGLNativeModule extends ReactContextBaseJavaModule {
         return REACT_CLASS;
     }
 
-    public RNPanoramaGLNativeModule(ReactApplicationContext reactContext) {
+    public RNPanoramaGLNativeModule(ReactApplicationContext reactContext, Activity activity) {
         super(reactContext);
         mReactContext = reactContext;
     }

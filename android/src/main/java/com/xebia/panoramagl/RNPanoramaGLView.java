@@ -1,5 +1,6 @@
 package com.xebia.panoramagl;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.BitmapFactory;
@@ -26,6 +27,7 @@ public class RNPanoramaGLView extends RelativeLayout {
 
     private android.os.Handler _handler;
     private RNPanoramaGLViewManager _manager;
+    private Activity _activity;
 
     /** Actual panorama widget. **/
     private VrPanoramaView panoWidgetView;
@@ -42,10 +44,11 @@ public class RNPanoramaGLView extends RelativeLayout {
     private ImageLoaderTask backgroundImageLoaderTask;
 
     @UiThread
-    public RNPanoramaGLView(Context context, RNPanoramaGLViewManager manager) {
+    public RNPanoramaGLView(Context context, RNPanoramaGLViewManager manager, Activity activity) {
         super(context);
         _handler = new android.os.Handler();
         _manager = manager;
+        _activity = activity;
     }
 
     public void onAfterUpdateTransaction() {

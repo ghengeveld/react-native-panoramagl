@@ -1,5 +1,7 @@
 package com.xebia.panoramagl;
 
+import android.app.Activity;
+import android.content.Context;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;
@@ -11,6 +13,16 @@ import java.util.Collections;
 import java.util.List;
 
 public class RNPanoramaGLPackage implements ReactPackage {
+    private Activity activity = null;
+
+    public RNPanoramaGLPackage(Context context) {
+        if(!(context instanceof Activity)) {
+            throw new RuntimeException("Context must be an instance of activity");
+        } else {
+            this.activity = (Activity)context;
+        }
+    }
+
     @Override
     public List<Class<? extends JavaScriptModule>> createJSModules() {
         return Collections.emptyList();
@@ -19,14 +31,14 @@ public class RNPanoramaGLPackage implements ReactPackage {
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
         return Arrays.<ViewManager>asList(
-                new RNPanoramaGLViewManager(reactContext)
+                new RNPanoramaGLViewManager(reactContext, activity)
         );
     }
 
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         return Arrays.<NativeModule>asList(
-                new RNPanoramaGLNativeModule(reactContext)
+                new RNPanoramaGLNativeModule(reactContext, activity)
         );
     }
 }

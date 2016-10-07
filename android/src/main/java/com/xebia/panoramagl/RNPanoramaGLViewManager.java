@@ -1,5 +1,6 @@
 package com.xebia.panoramagl;
 
+import android.app.Activity;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
@@ -8,10 +9,12 @@ public class RNPanoramaGLViewManager extends SimpleViewManager<RNPanoramaGLView>
     private static final String REACT_CLASS = "RNPanoramaGL";
 
     private ReactApplicationContext _context;
+    private Activity _activity;
 
-    public RNPanoramaGLViewManager(ReactApplicationContext context) {
+    public RNPanoramaGLViewManager(ReactApplicationContext context, Activity activity) {
         super();
         _context = context;
+        _activity = activity;
     }
 
     @Override
@@ -21,7 +24,7 @@ public class RNPanoramaGLViewManager extends SimpleViewManager<RNPanoramaGLView>
 
     @Override
     public RNPanoramaGLView createViewInstance (ThemedReactContext context) {
-        return new RNPanoramaGLView(context, this);
+        return new RNPanoramaGLView(context, this, _activity);
     }
 
     @Override
