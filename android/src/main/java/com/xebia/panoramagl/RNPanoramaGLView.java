@@ -92,9 +92,9 @@ public class RNPanoramaGLView extends RelativeLayout {
                     || fileInformation[0] == null || fileInformation[0].first == null) {
                 AssetManager assetManager = this.context.getAssets();
                 try {
-                    istr = assetManager.open("vreedenburg.jpg");
+                    istr = assetManager.open("R0010036.jpg");
                     panoOptions = new Options();
-                    panoOptions.inputType = Options.TYPE_STEREO_OVER_UNDER;
+                    panoOptions.inputType = Options.TYPE_MONO;
                 } catch (IOException e) {
                     Log.e(TAG, "Could not decode default bitmap: " + e);
                     return false;
