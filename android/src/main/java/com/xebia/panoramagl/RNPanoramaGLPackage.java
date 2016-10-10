@@ -13,16 +13,6 @@ import java.util.Collections;
 import java.util.List;
 
 public class RNPanoramaGLPackage implements ReactPackage {
-    private Activity activity = null;
-
-//    public RNPanoramaGLPackage(Context context) {
-//        if(!(context instanceof Activity)) {
-//            throw new RuntimeException("Context must be an instance of activity");
-//        } else {
-//            this.activity = (Activity)context;
-//        }
-//    }
-
     @Override
     public List<Class<? extends JavaScriptModule>> createJSModules() {
         return Collections.emptyList();
