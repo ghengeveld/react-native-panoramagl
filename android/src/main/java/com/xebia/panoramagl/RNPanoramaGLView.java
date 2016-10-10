@@ -54,6 +54,8 @@ public class RNPanoramaGLView extends RelativeLayout {
     public void onAfterUpdateTransaction() {
         panoWidgetView = new VrPanoramaView(_activity);
         panoWidgetView.setEventListener(new ActivityEventListener());
+        panoWidgetView.setStereoModeButtonEnabled(false);
+        panoWidgetView.setInfoButtonEnabled(false);
         this.addView(panoWidgetView);
 
         fileUri = null;
@@ -67,12 +69,6 @@ public class RNPanoramaGLView extends RelativeLayout {
         }
         backgroundImageLoaderTask = new ImageLoaderTask(this.getContext());
         backgroundImageLoaderTask.execute(Pair.create(fileUri, panoOptions));
-
-//        TextView tv = new TextView(this.getContext());
-//        tv.setId(1);
-//        tv.setText("yolo");
-//        tv.setTextColor(Color.BLACK);
-//        this.addView(tv);
     }
 
     /**
