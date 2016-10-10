@@ -92,7 +92,7 @@ public class RNPanoramaGLView extends RelativeLayout {
                     || fileInformation[0] == null || fileInformation[0].first == null) {
                 AssetManager assetManager = this.context.getAssets();
                 try {
-                    istr = assetManager.open("andes.jpg");
+                    istr = assetManager.open("R0010036.jpg");
                     panoOptions = new Options();
                     panoOptions.inputType = Options.TYPE_STEREO_OVER_UNDER;
                 } catch (IOException e) {
