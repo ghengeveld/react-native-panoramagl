@@ -52,7 +52,7 @@ public class RNPanoramaGLView extends RelativeLayout {
     }
 
     public void onAfterUpdateTransaction() {
-        panoWidgetView = new VrPanoramaView(this.getContext());
+        panoWidgetView = new VrPanoramaView(_activity);
         panoWidgetView.setEventListener(new ActivityEventListener());
         this.addView(panoWidgetView);
 
