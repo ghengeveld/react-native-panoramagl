@@ -11,10 +11,10 @@ public class RNPanoramaGLViewManager extends SimpleViewManager<RNPanoramaGLView>
     private ReactApplicationContext _context;
     private Activity _activity;
 
-    public RNPanoramaGLViewManager(ReactApplicationContext context, Activity activity) {
+    public RNPanoramaGLViewManager(ReactApplicationContext context) {
         super();
         _context = context;
-        _activity = activity;
+//        _activity = activity;
     }
 
     @Override
@@ -24,7 +24,7 @@ public class RNPanoramaGLViewManager extends SimpleViewManager<RNPanoramaGLView>
 
     @Override
     public RNPanoramaGLView createViewInstance (ThemedReactContext context) {
-        return new RNPanoramaGLView(context, this, _activity);
+        return new RNPanoramaGLView(context, this, context.getCurrentActivity());
     }
 
     @Override

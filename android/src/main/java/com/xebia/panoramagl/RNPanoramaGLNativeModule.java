@@ -14,7 +14,7 @@ public class RNPanoramaGLNativeModule extends ReactContextBaseJavaModule {
         return REACT_CLASS;
     }
 
-    public RNPanoramaGLNativeModule(ReactApplicationContext reactContext, Activity activity) {
+    public RNPanoramaGLNativeModule(ReactApplicationContext reactContext) {
         super(reactContext);
         mReactContext = reactContext;
     }

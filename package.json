@@ -2,7 +2,16 @@
   "name": "react-native-panoramagl",
   "version": "1.0.0",
   "description": "React Native component for PanoramaGL.",
-  "keywords": ["react", "native", "panorama", "gl", "360", "photo", "photosphere", "streetview"],
+  "keywords": [
+    "react",
+    "native",
+    "panorama",
+    "gl",
+    "360",
+    "photo",
+    "photosphere",
+    "streetview"
+  ],
   "main": "index.js",
   "scripts": {},
   "author": "Gert Hengeveld <info@ghengeveld.nl> (https://github.com/ghengeveld)",
@@ -14,5 +23,8 @@
   },
   "bugs": {
     "url": "https://github.com/ghengeveld/react-native-panoramagl/issues"
+  },
+  "devDependencies": {
+    "react-native": "^0.34.1"
   }
 }
